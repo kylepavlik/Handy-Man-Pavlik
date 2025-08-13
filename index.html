@@ -1,65 +1,167 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Handy Man Pavlik</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Handy Man Pavlik — Home Repairs Made Simple — and Cheap</title>
+<meta name="description" content="Dryer vent cleaning, outside window cleaning, gutter cleaning, light electrical & plumbing, pressure washing. Text (309) 712-4829. Serving Yukon • Mustang • SW OKC.">
 <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f8f9fa; color: #333; }
-    header { background: navy; color: white; padding: 20px; text-align: center; }
-    header h1 { margin: 0; font-size: 2.5em; }
-    header p { font-size: 1.2em; margin-top: 5px; }
-    section { padding: 20px; max-width: 800px; margin: auto; background: white; margin-top: 20px; border-radius: 8px; }
-    h2 { color: orange; }
-    .service { border-top: 2px solid #ddd; padding-top: 15px; margin-top: 15px; }
-    footer { background: navy; color: white; padding: 15px; text-align: center; margin-top: 30px; }
-    .qr { text-align: center; margin-top: 20px; }
-    img { max-width: 100%; height: auto; }
+  :root{
+    --navy:#1f2d3d; --orange:#e8862f; --cream:#faf7f2; --ink:#0f1822; --soft:#e9edf2; --white:#fff;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;background:var(--cream);color:var(--navy);font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif}
+  a{color:inherit;text-decoration:none}
+  .container{width:min(1100px,92vw);margin:auto}
+  /* HERO */
+  .hero{background:var(--white);border-bottom:4px solid #d9dee5}
+  .hero-inner{display:grid;grid-template-columns:420px 1fr;gap:2rem;align-items:center;padding:clamp(18px,3vw,28px) 0}
+  .brand h1{margin:0 0 .25rem;font-weight:900;font-size:clamp(30px,5vw,46px);letter-spacing:.2px}
+  .tag{font-weight:800;font-size:clamp(18px,3.2vw,26px);margin:.15rem 0}
+  .sub{color:#44546a;font-weight:700;margin:6px 0 14px}
+  .cta{display:inline-block;background:var(--orange);color:#fff;font-weight:900;padding:12px 16px;border-radius:12px}
+  .cta.small{font-weight:800;padding:8px 12px;border-radius:10px;background:#243244;color:#fff}
+  .badge{display:inline-flex;align-items:center;gap:8px;background:var(--white);border:2px solid #d9dee5;border-radius:999px;padding:8px 12px;font-weight:800}
+  .hero .art{justify-self:center}
+  .shadow{filter: drop-shadow(0 10px 24px rgba(10,20,30,.14))}
+  /* GRID CARDS */
+  .grid{display:grid;gap:18px;grid-template-columns:repeat(3,1fr);padding:26px 0}
+  .card{background:var(--white);border:1px solid #d9dee5;border-radius:18px;padding:18px 18px 16px;box-shadow:0 6px 18px rgba(10,20,30,.08)}
+  .card h2{margin:.15rem 0 8px;font-size:22px}
+  .bullets{margin:8px 0 2px 18px}
+  .bullets li{margin:6px 0}
+  .note{margin-top:8px;font-weight:800;color:#33465d}
+  .span2{grid-column:span 3}
+  .pill{display:inline-block;background:#eef3f8;padding:6px 10px;border-radius:999px;font-weight:800;margin:4px 6px 0 0}
+  /* INFO STRIP */
+  .info{display:flex;gap:16px;justify-content:space-between;align-items:center;padding:0 0 28px}
+  .areas{font-weight:900}
+  /* FOOTER */
+  footer{background:var(--white);border-top:4px solid #d9dee5}
+  footer .container{display:flex;justify-content:space-between;align-items:center;padding:12px 0}
+  /* RESPONSIVE */
+  @media (max-width:980px){ .grid{grid-template-columns:1fr 1fr} .span2{grid-column:span 2} .hero-inner{grid-template-columns:1fr} .hero .art{order:-1} .info{flex-direction:column;gap:8px;text-align:center}}
+  @media (max-width:560px){ .grid{grid-template-columns:1fr} .span2{grid-column:span 1} }
 </style>
 </head>
 <body>
 
-<header>
-    <h1>Handy Man Pavlik</h1>
-    <p>Home Repairs Made Simple — and Cheap</p>
-    <p><strong>Proudly Serving Country & Community</strong></p>
-    <p>Text Today for a Free Quote: <strong>(Your Phone Number)</strong></p>
+<header class="hero">
+  <div class="hero-inner container">
+    <!-- Mascot (inline SVG so no files needed) -->
+    <div class="art shadow" aria-hidden="true">
+      <svg width="360" height="320" viewBox="0 0 360 320" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#f2f4f7"/>
+            <stop offset="1" stop-color="#e7ebf1"/>
+          </linearGradient>
+        </defs>
+        <rect x="0" y="0" width="360" height="320" rx="22" fill="url(#bg)"/>
+        <!-- overalls -->
+        <path d="M106 218 h148 v68 a16 16 0 0 1 -16 16 h-116 a16 16 0 0 1 -16 -16 z" fill="#213142"/>
+        <path d="M116 170 h128 v56 h-128z" fill="#213142"/>
+        <circle cx="132" cy="182" r="8" fill="#e8862f"/>
+        <circle cx="228" cy="182" r="8" fill="#e8862f"/>
+        <!-- arms -->
+        <path d="M104 204 q-30 12 -36 36 q8 10 22 10 q8 -18 22 -24 z" fill="#f2b18a"/>
+        <path d="M256 204 q30 12 36 36 q-8 10 -22 10 q-8 -18 -22 -24 z" fill="#f2b18a"/>
+        <!-- wrench -->
+        <g transform="translate(74,232)">
+          <rect x="0" y="18" width="66" height="16" rx="6" fill="#374a5d"/>
+          <path d="M64 0 h18 v52 h-18z" fill="#9aa9b8"/>
+          <circle cx="73" cy="26" r="6" fill="#213142"/>
+        </g>
+        <!-- drill -->
+        <g transform="translate(240,232)">
+          <rect x="-54" y="6" width="54" height="20" rx="8" fill="#e8862f"/>
+          <rect x="-22" y="-8" width="26" height="14" rx="4" fill="#213142"/>
+          <rect x="4" y="-8" width="12" height="14" rx="3" fill="#9aa9b8"/>
+          <rect x="-38" y="26" width="20" height="24" rx="6" fill="#213142"/>
+        </g>
+        <!-- head -->
+        <circle cx="180" cy="136" r="52" fill="#f2b18a"/>
+        <path d="M138 140 q42 -34 88 0 q-10 -48 -44 -48 q-34 0 -44 48z" fill="#c07f5f"/>
+        <circle cx="164" cy="132" r="6" fill="#213142"/>
+        <circle cx="196" cy="132" r="6" fill="#213142"/>
+        <path d="M158 150 q22 16 44 0" stroke="#213142" stroke-width="5" fill="none"/>
+      </svg>
+    </div>
+
+    <div class="brand">
+      <h1>Handy Man Pavlik</h1>
+      <div class="tag">Home Repairs Made Simple — and Cheap</div>
+      <div class="sub">Proudly Serving Country &amp; Community</div>
+      <a class="cta" href="sms:+13097124829">TEXT TODAY (309) 712-4829</a>
+      <div style="margin-top:10px">
+        <span class="badge">🇺🇸 Veteran/Active Duty Friendly</span>
+      </div>
+    </div>
+  </div>
 </header>
 
-<section>
-    <h2>Specialties</h2>
+<main>
+  <section class="container grid">
+    <!-- Dryer Vent -->
+    <article class="card">
+      <h2>Dryer Vent Cleaning &amp; Repair</h2>
+      <ul class="bullets">
+        <li>More airflow • Less dry time • Lower energy bill</li>
+        <li>Reduces lint fire risk</li>
+        <li><strong>Bundle:</strong> clean + new transition + bird guard</li>
+      </ul>
+      <div class="note">Everything is negotiable — and I’m a bad negotiator.</div>
+    </article>
 
-    <div class="service">
-        <h3>Dryer Vent Cleaning</h3>
-        <p>Improve airflow, reduce drying time, and prevent fire hazards. Affordable and fast service.</p>
-        <p><strong>Bundle deals available!</strong></p>
-    </div>
+    <!-- Outside Windows -->
+    <article class="card">
+      <h2>Outside Window Cleaning</h2>
+      <ul class="bullets">
+        <li>Streak-free shine, brighter rooms, better curb appeal</li>
+        <li>By-pane pricing or simple flat packages</li>
+        <li>Add-ons: screens &amp; tracks</li>
+      </ul>
+      <div class="note">Your Project Procrastination Problem Solver.</div>
+    </article>
 
-    <div class="service">
-        <h3>Outside Window Cleaning</h3>
-        <p>Crystal-clear windows for a brighter home. Exterior only, streak-free guarantee.</p>
-        <p><em>Everything is negotiable — and I’m a bad negotiator!</em></p>
-    </div>
+    <!-- Gutter Cleaning -->
+    <article class="card">
+      <h2>Gutter Cleaning</h2>
+      <ul class="bullets">
+        <li>Prevents water damage and pest nesting</li>
+        <li>Includes downspout flushing</li>
+        <li>Fast, tidy, and safe</li>
+      </ul>
+      <div class="note">Fixing Stuff, One Smile at a Time.</div>
+    </article>
 
-    <div class="service">
-        <h3>Gutter Cleaning</h3>
-        <p>Protect your home from water damage by keeping your gutters clean and clog-free.</p>
-    </div>
+    <!-- Extras -->
+    <article class="card span2">
+      <h2>Electrical, Plumbing, Pressure Washing &amp; More</h2>
+      <div>
+        <span class="pill">Light fixtures &amp; switches</span>
+        <span class="pill">Faucets &amp; toilets</span>
+        <span class="pill">Dishwasher/washer hookups</span>
+        <span class="pill">Driveways, siding, decks</span>
+        <span class="pill">TV mounting</span>
+        <span class="pill">Furniture assembly</span>
+        <span class="pill">Fence &amp; gate repair</span>
+      </div>
+      <div class="note" style="margin-top:10px">Repairs Without the Hassle.</div>
+    </article>
+  </section>
 
-    <div class="service">
-        <h3>Extras</h3>
-        <p>Plumbing • Electrical • Pressure Washing • And More!</p>
-        <p>Repairs Without the Hassle</p>
-    </div>
-</section>
-
-<div class="qr">
-    <p>Scan for full catalog:</p>
-    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://your-github-url-here" alt="QR Code">
-</div>
+  <section class="container info">
+    <div class="areas">Serving <strong>Yukon • Mustang • SW OKC</strong></div>
+    <a class="cta small" href="sms:+13097124829">Text (309) 712-4829</a>
+  </section>
+</main>
 
 <footer>
-    <p>&copy; 2025 Handy Man Pavlik — Serving Yukon, Mustang, and SW OKC</p>
+  <div class="container">
+    <div>© 2025 Handy Man Pavlik</div>
+    <div>Questions? <a href="sms:+13097124829"><strong>Text me</strong></a></div>
+  </div>
 </footer>
 
 </body>
