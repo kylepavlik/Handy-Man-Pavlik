@@ -7,14 +7,13 @@
 <meta name="description" content="Dryer vent cleaning, outside window cleaning, A/C condenser cleaning, light electrical & plumbing, pressure washing. Text or Call (309) 712-4829. Serving Yukon • Mustang • SW OKC.">
 <style>
   :root{
-    --navy:#1f2d3d;
+    --navy:#0d1b2a; /* Darker blue for overalls look */
     --orange:#e8862f;
     --cream:#fdf8f2;
     --lightblue:#e6f0f8;
     --lighterblue:#f3f8fc;
     --line:#d9dee5;
     --white:#fff;
-    --calmgreen:#3ca98b;
   }
   *{box-sizing:border-box}
   body{
@@ -37,6 +36,7 @@
     margin:0;
     font-weight:900;
     font-size:clamp(20px,4vw,28px);
+    color:var(--navy);
   }
   .tag{
     font-weight:900;
@@ -60,7 +60,7 @@
   }
   .schedule{
     display:inline-block;
-    background:var(--calmgreen);
+    background:var(--orange); /* Changed from green to orange */
     color:#fff;
     font-weight:900;
     font-size:1.2rem;
@@ -82,7 +82,7 @@
   .discount{
     margin-top:8px;
     font-weight:800;
-    color:var(--calmgreen);
+    color:var(--navy);
   }
   .scroll-hint{
     text-align:center;
@@ -105,6 +105,7 @@
     box-shadow:0 6px 18px rgba(10,20,30,.08);
     display:flex;
     flex-direction:column;
+    color:var(--navy);
   }
   .card:nth-child(odd){
     background:var(--white);
@@ -123,18 +124,18 @@
     border-radius:14px;
     display:grid;
     place-items:center;
-    height:230px;
+    height:auto; /* Let image decide height */
     margin-bottom:10px;
     overflow:hidden;
   }
   .pic img{
     width:100%;
-    height:100%;
-    object-fit:contain; /* Show full image */
+    height:auto; /* No cropping */
+    object-fit:contain;
   }
   .bullets{margin:6px 0 2px 18px}
   .bullets li{margin:6px 0}
-  .note{margin-top:10px;font-weight:800;color:#33465d}
+  .note{margin-top:10px;font-weight:800;color:var(--navy)}
   .span2{grid-column:span 3}
   .pill{
     display:inline-block;
@@ -153,13 +154,14 @@
     gap:12px;
     padding:0 0 32px;
   }
-  .areas{font-weight:900;text-align:center}
+  .areas{font-weight:900;text-align:center;color:var(--navy)}
   footer{background:var(--white);border-top:4px solid var(--line)}
   footer .container{
     display:flex;
     justify-content:space-between;
     align-items:center;
     padding:12px 0;
+    color:var(--navy);
   }
 
   /* RESPONSIVE */
@@ -170,7 +172,7 @@
   @media (max-width:560px){
     .grid{grid-template-columns:1fr}
     .span2{grid-column:span 1}
-    .pic{height:200px}
+    .pic img{max-height:300px}
   }
 </style>
 </head>
