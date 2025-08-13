@@ -1,117 +1,268 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Handy Man Pavlik</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        header {
-            background-color: navy;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-        header h1 {
-            font-size: 2.5em;
-            margin: 0;
-        }
-        header h2 {
-            margin: 5px 0 0 0;
-            font-weight: normal;
-        }
-        .container {
-            padding: 20px;
-            max-width: 900px;
-            margin: auto;
-            background-color: white;
-        }
-        .service {
-            border-bottom: 1px solid #ddd;
-            padding: 15px 0;
-        }
-        .service img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-        }
-        .price {
-            font-size: 1.2em;
-            font-weight: bold;
-            color: navy;
-        }
-        footer {
-            background-color: navy;
-            color: white;
-            text-align: center;
-            padding: 15px;
-            margin-top: 30px;
-        }
-        .cta {
-            display: inline-block;
-            background-color: orange;
-            color: white;
-            padding: 12px 25px;
-            font-size: 1.2em;
-            border-radius: 6px;
-            text-decoration: none;
-            margin-top: 20px;
-        }
-        ul {
-            margin-top: 10px;
-        }
-        ul li {
-            margin-bottom: 5px;
-        }
-    </style>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Handy Man Pavlik — Home Repairs Made Simple — and Cheap</title>
+<meta name="description" content="Dryer vent cleaning, outside window cleaning, A/C condenser cleaning, light electrical & plumbing, pressure washing. Text or Call (309) 712-4829. Serving Yukon • Mustang • SW OKC.">
+<style>
+  :root{
+    --navy:#1f2d3d;
+    --orange:#e8862f;
+    --cream:#fdf8f2;
+    --lightblue:#e6f0f8;
+    --lighterblue:#f3f8fc;
+    --line:#d9dee5;
+    --white:#fff;
+    --calmgreen:#3ca98b;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    background:var(--lightblue);
+    color:var(--navy);
+    font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif
+  }
+  a{color:inherit;text-decoration:none}
+  .container{width:min(1100px,92vw);margin:auto}
+
+  /* HERO */
+  .hero{
+    background:var(--white);
+    border-bottom:4px solid var(--line);
+    padding:2rem 0;
+    text-align:center;
+  }
+  .brand h1{
+    margin:0;
+    font-weight:900;
+    font-size:clamp(20px,4vw,28px);
+  }
+  .tag{
+    font-weight:900;
+    font-size:clamp(28px,5vw,44px);
+    margin:10px 0;
+    color:var(--orange);
+  }
+  .sub{
+    color:#44546a;
+    font-weight:700;
+    margin:6px 0 16px;
+  }
+  .cta{
+    display:inline-block;
+    background:var(--orange);
+    color:#fff;
+    font-weight:900;
+    padding:12px 18px;
+    border-radius:12px;
+    margin:5px;
+  }
+  .schedule{
+    display:inline-block;
+    background:var(--calmgreen);
+    color:#fff;
+    font-weight:900;
+    padding:12px 18px;
+    border-radius:12px;
+    margin:5px;
+  }
+  .badge{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    background:var(--white);
+    border:2px solid var(--line);
+    border-radius:999px;
+    padding:8px 12px;
+    font-weight:800;
+    margin-top:10px;
+  }
+  .discount{
+    margin-top:8px;
+    font-weight:800;
+    color:var(--calmgreen);
+  }
+  .scroll-hint{
+    text-align:center;
+    color:#5a6a7d;
+    font-weight:700;
+    padding:6px 0 18px;
+  }
+
+  /* GRID CARDS */
+  .grid{
+    display:grid;
+    gap:18px;
+    grid-template-columns:repeat(3,1fr);
+    padding:28px 0;
+  }
+  .card{
+    border:1px solid var(--line);
+    border-radius:18px;
+    padding:16px;
+    box-shadow:0 6px 18px rgba(10,20,30,.08);
+    display:flex;
+    flex-direction:column;
+  }
+  .card:nth-child(odd){
+    background:var(--white);
+  }
+  .card:nth-child(even){
+    background:var(--lighterblue);
+  }
+  .card h2{
+    margin:.15rem 0 10px;
+    font-size:22px;
+    color:var(--orange);
+  }
+  .pic{
+    background:#eef3f8;
+    border:1px solid var(--line);
+    border-radius:14px;
+    display:grid;
+    place-items:center;
+    height:230px;
+    margin-bottom:10px;
+    overflow:hidden;
+  }
+  .pic img{width:100%;height:100%;object-fit:cover}
+  .bullets{margin:6px 0 2px 18px}
+  .bullets li{margin:6px 0}
+  .note{margin-top:10px;font-weight:800;color:#33465d}
+  .span2{grid-column:span 3}
+  .pill{
+    display:inline-block;
+    background:var(--cream);
+    padding:6px 10px;
+    border-radius:999px;
+    font-weight:800;
+    margin:4px 6px 0 0;
+  }
+
+  /* INFO + FOOTER */
+  .info{
+    display:flex;
+    gap:16px;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 0 32px;
+  }
+  .areas{font-weight:900}
+  footer{background:var(--white);border-top:4px solid var(--line)}
+  footer .container{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:12px 0;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width:980px){
+    .grid{grid-template-columns:1fr 1fr}
+    .span2{grid-column:span 2}
+  }
+  @media (max-width:560px){
+    .grid{grid-template-columns:1fr}
+    .span2{grid-column:span 1}
+    .pic{height:200px}
+  }
+</style>
 </head>
 <body>
 
-<header>
+<header class="hero">
+  <div class="container brand">
     <h1>Handy Man Pavlik</h1>
-    <h2>Veteran / Active Duty</h2>
-    <p>Text or Call: <strong>309-712-4829</strong></p>
+    <div class="tag">Home Repairs Made Simple — and Cheap</div>
+    <div class="sub">Proudly Serving Country &amp; Community</div>
+    <a class="cta" href="tel:+13097124829">TEXT OR CALL (309) 712-4829</a>
+    <a class="schedule" href="https://calendly.com/kyle-pavlik/30min" target="_blank">SCHEDULE NOW</a>
+    <div class="badge">🇺🇸 Veteran/Active Duty</div>
+    <div class="discount">Military & First Responder – 10% OFF</div>
+  </div>
+  <div class="scroll-hint">▼ Scroll for services</div>
 </header>
 
-<div class="container">
+<main class="container">
+  <section class="grid">
+    <!-- Dryer Vent -->
+    <article class="card">
+      <div class="pic">
+        <img src="https://tse4.mm.bing.net/th/id/OIP.F5lmpyC5Ruyp9Tkxk-Uc4AHaEw?pid=Api" alt="Dryer vent before & after">
+      </div>
+      <h2>Dryer Vent Cleaning &amp; Repair</h2>
+      <p><strong>WALL VENT</strong> – $80<br>
+         <strong>ROOF VENT</strong> – $120<br>
+         <strong>TRANSITION PIECE</strong> – $45
+      </p>
+      <ul class="bullets">
+        <li>More airflow</li>
+        <li>Less dry time</li>
+        <li>Lower energy bill</li>
+        <li>Reduces lint fire risk</li>
+      </ul>
+      <div class="note">“Everything is negotiable — and I’m a bad negotiator.”</div>
+    </article>
 
-    <div class="service">
-        <h3>Dryer Vent Cleaning</h3>
-        <p class="price">WALL VENT - $80</p>
-        <p class="price">ROOF VENT - $120</p>
-        <p class="price">TRANSITION PIECE - $45</p>
-        <ul>
-            <li>More airflow</li>
-            <li>Less dry time</li>
-            <li>Lower energy bill</li>
-        </ul>
-        <img src="dryer-vent.jpg" alt="Dryer Vent Cleaning">
-    </div>
+    <!-- Window Cleaning -->
+    <article class="card">
+      <div class="pic">
+        <img src="https://tse2.mm.bing.net/th/id/OIP.5S1P1BTNgzoS2KYu6-_l2wHaHa?pid=Api" alt="Window cleaning before and after">
+      </div>
+      <h2>Outside Window Cleaning</h2>
+      <p><strong>Price:</strong> $100</p>
+      <ul class="bullets">
+        <li>Streak-free shine, brighter rooms, better curb appeal</li>
+      </ul>
+      <div class="note">“Your Project Procrastination Problem Solver.”</div>
+    </article>
 
-    <div class="service">
-        <h3>Window Cleaning</h3>
-        <p class="price">$100</p>
-        <img src="window-cleaning.jpg" alt="Window Cleaning">
-    </div>
+    <!-- A/C Condenser Cleaning -->
+    <article class="card">
+      <div class="pic">
+        <img src="https://tse3.mm.bing.net/th/id/OIP.kqkYsp90AAfpFEJKfTvqFQHaHa?pid=Api" alt="A/C condenser coil cleaning">
+      </div>
+      <h2>A/C Condenser Cleaning</h2>
+      <p><strong>Price:</strong> $45</p>
+      <ul class="bullets">
+        <li>Improves cooling efficiency &amp; extends unit life</li>
+        <li>Gentle coil rinse + debris removal</li>
+        <li>Includes unit perimeter cleanup</li>
+      </ul>
+      <div class="note">“Fixing Stuff, One Smile at a Time.”</div>
+    </article>
 
-    <div class="service">
-        <h3>A/C Condenser Cleaning</h3>
-        <p class="price">$45</p>
-        <img src="ac-cleaning.jpg" alt="A/C Condenser Cleaning">
-    </div>
+    <!-- Extras -->
+    <article class="card span2">
+      <h2>Electrical, Plumbing, Pressure Washing &amp; More</h2>
+      <div style="display:flex;flex-wrap:wrap;gap:8px">
+        <span class="pill">Light fixtures &amp; switches</span>
+        <span class="pill">Faucets &amp; toilets</span>
+        <span class="pill">Dishwasher/washer hookups</span>
+        <span class="pill">Driveways, siding, decks</span>
+        <span class="pill">TV mounting</span>
+        <span class="pill">Furniture assembly</span>
+        <span class="pill">Fence &amp; gate repair</span>
+      </div>
+      <div class="note" style="margin-top:10px">“Repairs Without the Hassle.”</div>
+    </article>
+  </section>
 
-    <a class="cta" href="https://calendly.com/kyle-pavlik/30min" target="_blank">Schedule Now</a>
-
-</div>
+  <section class="info">
+    <div class="areas">Serving <strong>Yukon • Mustang • SW OKC</strong></div>
+    <a class="cta" href="tel:+13097124829">Text or Call (309) 712-4829</a>
+  </section>
+</main>
 
 <footer>
-    <p>Military & First Responder - 10% Off</p>
-    <a class="cta" href="https://calendly.com/kyle-pavlik/30min" target="_blank">Schedule Now</a>
+  <div class="container">
+    <div>© 2025 Handy Man Pavlik</div>
+    <div>
+      <a class="cta" href="tel:+13097124829">Text or Call</a>
+      <a class="schedule" href="https://calendly.com/kyle-pavlik/30min" target="_blank">Schedule Now</a>
+    </div>
+  </div>
 </footer>
 
 </body>
