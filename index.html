@@ -36,9 +36,10 @@
   .card h2{margin:.15rem 0 10px;font-size:22px}
   .pic{background:var(--soft);border:1px solid var(--line);border-radius:14px;
     display:grid;place-items:center;height:230px;margin-bottom:10px;overflow:hidden}
+  .pic img{width:100%;height:100%;object-fit:cover}
   .bullets{margin:6px 0 2px 18px}
   .bullets li{margin:6px 0}
-  .note{margin-top:8px;font-weight:800;color:#33465d}
+  .note{margin-top:10px;font-weight:800;color:#33465d}
   .span2{grid-column:span 3}
   .pill{display:inline-block;background:#eef3f8;padding:6px 10px;border-radius:999px;font-weight:800;margin:4px 6px 0 0}
 
@@ -109,25 +110,12 @@
 </header>
 
 <main class="container">
-  <!-- UPDATED SERVICES GRID -->
+  <!-- UPDATED SERVICES GRID WITH YOUR IMAGES & PRICES -->
   <section class="grid">
-    <!-- Dryer Vent -->
+    <!-- Dryer Vent (Image 1 you chose) -->
     <article class="card">
       <div class="pic">
-        <!-- (optional) replace with your real photo later -->
-        <svg viewBox="0 0 600 360" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <linearGradient id="lint" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0" stop-color="#d5dbe3"/><stop offset="1" stop-color="#b8c3cf"/>
-            </linearGradient>
-          </defs>
-          <rect width="600" height="360" rx="16" fill="#f6f8fb"/>
-          <rect x="60" y="80" width="480" height="80" rx="12" fill="url(#lint)" />
-          <rect x="60" y="200" width="480" height="80" rx="12" fill="#eaf1f7" />
-          <path d="M70 240 h460" stroke="#7bb6ff" stroke-width="8" stroke-linecap="round"/>
-          <path d="M70 230 h460" stroke="#9fd1ff" stroke-width="8" stroke-linecap="round"/>
-          <text x="300" y="330" font-size="28" text-anchor="middle" fill="#415066">Dryer Vent • Before / After</text>
-        </svg>
+        <img src="https://tse4.mm.bing.net/th/id/OIP.F5lmpyC5Ruyp9Tkxk-Uc4AHaEw?pid=Api" alt="Dryer vent before & after (lint buildup vs clean)">
       </div>
       <h2>Dryer Vent Cleaning &amp; Repair</h2>
       <p><strong>WALL VENT</strong> – $80<br>
@@ -139,65 +127,37 @@
         <li>Reduces lint fire risk</li>
         <li><strong>Bundle:</strong> clean + new transition + bird guard</li>
       </ul>
-      <div class="note">Everything is negotiable — and I’m a bad negotiator.</div>
+      <div class="note">“Everything is negotiable — and I’m a bad negotiator.”</div>
     </article>
 
-    <!-- Outside Window Cleaning -->
+    <!-- Outside Window Cleaning (new image) -->
     <article class="card">
       <div class="pic">
-        <!-- (optional) replace with your real exterior window photo later -->
-        <svg viewBox="0 0 600 360" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-          <rect width="600" height="360" rx="16" fill="#eaf1f7"/>
-          <rect x="90" y="60" width="420" height="240" rx="12" fill="#dff0ff" stroke="#b9d5ee" stroke-width="6"/>
-          <line x1="300" y1="60" x2="300" y2="300" stroke="#b9d5ee" stroke-width="6"/>
-          <line x1="90" y1="180" x2="510" y2="180" stroke="#b9d5ee" stroke-width="6"/>
-          <g fill="#fff">
-            <circle cx="140" cy="100" r="10"/><circle cx="170" cy="130" r="7"/><circle cx="200" cy="95" r="5"/>
-            <circle cx="410" cy="250" r="8"/><circle cx="440" cy="220" r="6"/><circle cx="470" cy="250" r="5"/>
-          </g>
-          <text x="300" y="335" font-size="28" text-anchor="middle" fill="#415066">Outside Window • Streak-Free</text>
-        </svg>
+        <img src="https://tse2.mm.bing.net/th/id/OIP.5S1P1BTNgzoS2KYu6-_l2wHaHa?r=0&pid=Api" alt="Window cleaning before and after — streak-free glass">
       </div>
       <h2>Outside Window Cleaning</h2>
-      <p><strong>Flat Rate:</strong> $100</p>
+      <p><strong>Price:</strong> $100</p>
       <ul class="bullets">
         <li>Streak-free shine, brighter rooms, better curb appeal</li>
         <li>By-pane pricing or simple flat packages</li>
         <li>Add-ons: screens &amp; tracks</li>
       </ul>
-      <div class="note">Your Project Procrastination Problem Solver.</div>
+      <div class="note">“Your Project Procrastination Problem Solver.”</div>
     </article>
 
-    <!-- A/C Condenser Cleaning -->
+    <!-- A/C Condenser Cleaning (new image) -->
     <article class="card">
       <div class="pic">
-        <!-- (optional) replace with your real condenser-cleaning photo later -->
-        <svg viewBox="0 0 600 360" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-          <rect width="600" height="360" rx="16" fill="#f6f8fb"/>
-          <rect x="140" y="80" width="320" height="220" rx="14" fill="#cfd8e1" stroke="#9fb1c4" stroke-width="6"/>
-          <g stroke="#9fb1c4" stroke-width="3">
-            <line x1="160" y1="110" x2="440" y2="110"/>
-            <line x1="160" y1="130" x2="440" y2="130"/>
-            <line x1="160" y1="150" x2="440" y2="150"/>
-            <line x1="160" y1="170" x2="440" y2="170"/>
-            <line x1="160" y1="190" x2="440" y2="190"/>
-            <line x1="160" y1="210" x2="440" y2="210"/>
-            <line x1="160" y1="230" x2="440" y2="230"/>
-            <line x1="160" y1="250" x2="440" y2="250"/>
-          </g>
-          <path d="M470 120 q40 10 60 -10" stroke="#7ec7ff" stroke-width="8" fill="none" stroke-linecap="round"/>
-          <path d="M470 150 q40 10 60 -10" stroke="#9bd8ff" stroke-width="8" fill="none" stroke-linecap="round"/>
-          <text x="300" y="332" font-size="28" text-anchor="middle" fill="#415066">A/C Condenser Cleaning</text>
-        </svg>
+        <img src="https://tse3.mm.bing.net/th/id/OIP.kqkYsp90AAfpFEJKfTvqFQHaHa?pid=Api" alt="A/C condenser coil cleaning — before and after">
       </div>
       <h2>A/C Condenser Cleaning</h2>
-      <p><strong>Flat Rate:</strong> $45</p>
+      <p><strong>Price:</strong> $45</p>
       <ul class="bullets">
         <li>Improves cooling efficiency &amp; extends unit life</li>
         <li>Gentle coil rinse + debris removal</li>
         <li>Includes unit perimeter cleanup</li>
       </ul>
-      <div class="note">Fixing Stuff, One Smile at a Time.</div>
+      <div class="note">“Fixing Stuff, One Smile at a Time.”</div>
     </article>
 
     <!-- Extras -->
@@ -212,7 +172,7 @@
         <span class="pill">Furniture assembly</span>
         <span class="pill">Fence &amp; gate repair</span>
       </div>
-      <div class="note" style="margin-top:10px">Repairs Without the Hassle.</div>
+      <div class="note" style="margin-top:10px">“Repairs Without the Hassle.”</div>
     </article>
   </section>
 
