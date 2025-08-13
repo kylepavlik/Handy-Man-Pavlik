@@ -143,12 +143,12 @@
   /* INFO + FOOTER */
   .info{
     display:flex;
-    gap:16px;
-    justify-content:space-between;
+    flex-direction:column;
     align-items:center;
+    gap:12px;
     padding:0 0 32px;
   }
-  .areas{font-weight:900}
+  .areas{font-weight:900;text-align:center}
   footer{background:var(--white);border-top:4px solid var(--line)}
   footer .container{
     display:flex;
@@ -253,6 +253,7 @@
 
   <section class="info">
     <div class="areas">Serving <strong>Yukon • Mustang • SW OKC</strong></div>
+    <a class="schedule" href="https://calendly.com/kyle-pavlik/30min" target="_blank">Schedule Now</a>
     <a class="cta" href="tel:+13097124829">Text or Call (309) 712-4829</a>
   </section>
 </main>
@@ -260,7 +261,6 @@
 <footer>
   <div class="container">
     <div>© 2025 Handy Man Pavlik</div>
-    <a class="schedule" href="https://calendly.com/kyle-pavlik/30min" target="_blank">Schedule Now</a>
   </div>
 </footer>
 
