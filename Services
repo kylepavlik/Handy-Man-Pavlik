@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Handy Man Pavlik</title>
+<style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f8f9fa; color: #333; }
+    header { background: navy; color: white; padding: 20px; text-align: center; }
+    header h1 { margin: 0; font-size: 2.5em; }
+    header p { font-size: 1.2em; margin-top: 5px; }
+    section { padding: 20px; max-width: 800px; margin: auto; background: white; margin-top: 20px; border-radius: 8px; }
+    h2 { color: orange; }
+    .service { border-top: 2px solid #ddd; padding-top: 15px; margin-top: 15px; }
+    footer { background: navy; color: white; padding: 15px; text-align: center; margin-top: 30px; }
+    .qr { text-align: center; margin-top: 20px; }
+    img { max-width: 100%; height: auto; }
+</style>
+</head>
+<body>
+
+<header>
+    <h1>Handy Man Pavlik</h1>
+    <p>Home Repairs Made Simple — and Cheap</p>
+    <p><strong>Proudly Serving Country & Community</strong></p>
+    <p>Text Today for a Free Quote: <strong>(Your Phone Number)</strong></p>
+</header>
+
+<section>
+    <h2>Specialties</h2>
+
+    <div class="service">
+        <h3>Dryer Vent Cleaning</h3>
+        <p>Improve airflow, reduce drying time, and prevent fire hazards. Affordable and fast service.</p>
+        <p><strong>Bundle deals available!</strong></p>
+    </div>
+
+    <div class="service">
+        <h3>Outside Window Cleaning</h3>
+        <p>Crystal-clear windows for a brighter home. Exterior only, streak-free guarantee.</p>
+        <p><em>Everything is negotiable — and I’m a bad negotiator!</em></p>
+    </div>
+
+    <div class="service">
+        <h3>Gutter Cleaning</h3>
+        <p>Protect your home from water damage by keeping your gutters clean and clog-free.</p>
+    </div>
+
+    <div class="service">
+        <h3>Extras</h3>
+        <p>Plumbing • Electrical • Pressure Washing • And More!</p>
+        <p>Repairs Without the Hassle</p>
+    </div>
+</section>
+
+<div class="qr">
+    <p>Scan for full catalog:</p>
+    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://your-github-url-here" alt="QR Code">
+</div>
+
+<footer>
+    <p>&copy; 2025 Handy Man Pavlik — Serving Yukon, Mustang, and SW OKC</p>
+</footer>
+
+</body>
+</html>
