@@ -60,11 +60,11 @@
   }
   .schedule{
     display:inline-block;
-    background:var(--orange); /* Changed from green to orange */
+    background:var(--orange); /* match brand */
     color:#fff;
     font-weight:900;
     font-size:1.2rem;
-    padding:16px 28px; /* Bigger button */
+    padding:16px 28px;
     border-radius:14px;
     margin:5px;
   }
@@ -124,13 +124,13 @@
     border-radius:14px;
     display:grid;
     place-items:center;
-    height:auto; /* Let image decide height */
+    height:auto;
     margin-bottom:10px;
     overflow:hidden;
   }
   .pic img{
     width:100%;
-    height:auto; /* No cropping */
+    height:auto;
     object-fit:contain;
   }
   .bullets{margin:6px 0 2px 18px}
@@ -188,7 +188,17 @@
     <div class="badge">🇺🇸 Veteran/Active Duty</div>
     <div class="discount">Military & First Responder – 10% OFF</div>
   </div>
-  <div class="scroll-hint">▼ Scroll for services</div>
+
+  <!-- HOURS (replaces the old "Scroll for services" line) -->
+  <div class="scroll-hint">
+    <strong>Hours:</strong>
+    Mon: 3:00 PM – 8:00 PM &nbsp;•&nbsp;
+    Tue: 3:00 PM – 8:00 PM &nbsp;•&nbsp;
+    Wed: 3:00 PM – 5:00 PM &nbsp;•&nbsp;
+    Thu: 3:00 PM – 8:00 PM &nbsp;•&nbsp;
+    Fri: 3:00 PM – 8:00 PM &nbsp;•&nbsp;
+    Sat: 3:00 PM – 8:00 PM
+  </div>
 </header>
 
 <main class="container">
@@ -209,7 +219,7 @@
         <li>Lower energy bill</li>
         <li>Reduces lint fire risk</li>
       </ul>
-      <div class="note">“Don't worry, I'll fix it.”</div>
+      <div class="note">“Everything is negotiable — and I’m a bad negotiator.”</div>
     </article>
 
     <!-- Window Cleaning -->
@@ -268,7 +278,7 @@
 <footer>
   <div class="container">
     <div>© 2025 Handy Man Pavlik</div>
-  </div>We're a small, local handyman service-not a licensed contractor. All work is done with care and honesty. Prices may vary based on the job.</div>
+  </div>
 </footer>
 
 </body>
