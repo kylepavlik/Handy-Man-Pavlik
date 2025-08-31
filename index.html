@@ -3,135 +3,325 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Handy Man Pavlik — Home Repairs Made Simple</title>
-<meta name="description" content="Dryer vent cleaning, A/C condenser cleaning, light electrical & plumbing, pressure washing. Serving Yukon • Mustang • SW OKC.">
+<title>Handy Man Pavlik — Home Repairs Made Simple — and Cheap</title>
+<meta name="description" content="Dryer vent cleaning, A/C condenser cleaning, light electrical & plumbing, pressure washing. Text or Call (309) 712-4829. Serving Yukon • Mustang • SW OKC.">
 <style>
   :root{
-    --navy:#0d1b2a;
+    --navy:#0d1b2a; /* Darker blue for overalls look */
     --orange:#e8862f;
     --cream:#fdf8f2;
     --lightblue:#e6f0f8;
+    --lighterblue:#f3f8fc;
     --line:#d9dee5;
     --white:#fff;
   }
-  *{box-sizing:border-box; margin:0; padding:0;}
-  body{font-family:Segoe UI,Roboto,Arial,sans-serif; line-height:1.6; background:var(--lightblue); color:var(--navy);}
-  a{text-decoration:none;}
-
-  /* NAV */
-  nav{
-    background:var(--navy);
-    color:#fff;
-    padding:.8rem 1.5rem;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    position:sticky;top:0;z-index:10;
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    background:var(--lightblue);
+    color:var(--navy);
+    font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif
   }
-  nav h1{font-size:1.4rem;color:var(--orange);}
-  nav ul{display:flex;list-style:none;gap:1.2rem;}
-  nav a{color:#fff;font-weight:600;}
-  nav a:hover{color:var(--orange);}
+  a{color:inherit;text-decoration:none}
+  .container{width:min(1100px,92vw);margin:auto}
+
+  /* TOP BAR */
+  .topbar{
+    background:var(--navy); color:#fff; font-weight:800;
+    padding:.5rem 0; text-align:center;
+  }
+  .topbar a{ color:#fff; text-decoration:underline }
+  .topbar a:hover{ color:#ffd9c2 }
 
   /* HERO */
   .hero{
-    background:url('https://picsum.photos/id/1003/1400/500?blur=3') center/cover no-repeat;
-    color:#fff;text-align:center;
-    padding:4rem 1rem;
+    background:var(--white);
+    border-bottom:4px solid var(--line);
+    padding:2rem 0 1rem;
+    text-align:center;
   }
-  .hero h2{font-size:2.4rem;font-weight:900;margin-bottom:.5rem;}
-  .hero p{font-size:1.2rem;margin-bottom:1rem;}
-  .hero .btn{
-    display:inline-block;background:var(--orange);color:#fff;
-    padding:.9rem 1.4rem;border-radius:10px;font-weight:700;
-    transition:.2s;
+  .brand h1{
+    margin:0;
+    font-weight:900;
+    font-size:clamp(20px,4vw,28px);
+    color:var(--navy);
   }
-  .hero .btn:hover{background:#cf6d1a;}
+  .tag{
+    font-weight:900;
+    font-size:clamp(28px,5vw,44px);
+    margin:10px 0;
+    color:var(--orange);
+  }
+  .sub{
+    color:#44546a;
+    font-weight:700;
+    margin:6px 0 16px;
+  }
+  .cta{
+    display:inline-block;
+    background:var(--orange);
+    color:#fff;
+    font-weight:900;
+    padding:12px 18px;
+    border-radius:12px;
+    margin:5px;
+  }
+  .schedule{
+    display:inline-block;
+    background:var(--orange);
+    color:#fff;
+    font-weight:900;
+    font-size:1.2rem;
+    padding:16px 28px;
+    border-radius:14px;
+    margin:5px;
+  }
+  .badge{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    background:var(--white);
+    border:2px solid var(--line);
+    border-radius:999px;
+    padding:8px 12px;
+    font-weight:800;
+    margin-top:10px;
+  }
+  .discount{
+    margin-top:8px;
+    font-weight:800;
+    color:var(--navy);
+  }
+  .scroll-hint{
+    text-align:center;
+    color:#5a6a7d;
+    font-weight:700;
+    padding:6px 0 18px;
+  }
 
-  /* CARDS GRID */
-  .grid{display:grid;gap:1.5rem;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));padding:2rem 1rem;}
+  /* GRID CARDS */
+  .grid{
+    display:grid;
+    gap:18px;
+    grid-template-columns:repeat(3,1fr);
+    padding:28px 0;
+  }
   .card{
-    background:var(--white);border-radius:14px;
-    padding:1rem;border:1px solid var(--line);
-    box-shadow:0 4px 12px rgba(0,0,0,.08);
-    transition:.2s;
+    border:1px solid var(--line);
+    border-radius:18px;
+    padding:16px;
+    box-shadow:0 6px 18px rgba(10,20,30,.08);
+    display:flex;
+    flex-direction:column;
+    color:var(--navy);
   }
-  .card:hover{transform:translateY(-4px);box-shadow:0 6px 18px rgba(0,0,0,.12);}
-  .card h3{color:var(--orange);margin:.6rem 0;}
+  .card:nth-child(odd){
+    background:var(--white);
+  }
+  .card:nth-child(even){
+    background:var(--lighterblue);
+  }
+  .card h2{
+    margin:.15rem 0 10px;
+    font-size:22px;
+    color:var(--orange);
+  }
+  .pic{
+    background:#eef3f8;
+    border:1px solid var(--line);
+    border-radius:14px;
+    display:grid;
+    place-items:center;
+    height:auto;
+    margin-bottom:10px;
+    overflow:hidden;
+  }
+  .pic img{
+    width:100%;
+    height:auto;
+    object-fit:contain;
+  }
+  .bullets{margin:6px 0 2px 18px}
+  .bullets li{margin:6px 0}
+  .note{margin-top:10px;font-weight:800;color:var(--navy)}
+  .span2{grid-column:span 3}
+  .pill{
+    display:inline-block;
+    background:var(--cream);
+    padding:6px 10px;
+    border-radius:999px;
+    font-weight:800;
+    margin:4px 6px 0 0;
+  }
 
-  .card img{width:100%;border-radius:12px;}
+  /* INFO + FOOTER */
+  .info{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:12px;
+    padding:0 0 32px;
+  }
+  .areas{font-weight:900;text-align:center;color:var(--navy)}
+  footer{background:var(--white);border-top:4px solid var(--line)}
+  footer .container{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:12px 0;
+    color:var(--navy);
+    flex-wrap:wrap;
+    gap:10px;
+  }
+  footer small{ color:#666 }
 
-  /* TESTIMONIALS */
-  .testimonials{background:var(--cream);padding:2.5rem 1rem;text-align:center;}
-  .testimonials h2{color:var(--orange);margin-bottom:1rem;}
-  .quote{max-width:600px;margin:1rem auto;font-style:italic;}
-
-  /* FOOTER */
-  footer{background:var(--navy);color:#fff;padding:2rem 1rem;text-align:center;}
-  footer a{color:var(--orange);}
-  footer small{display:block;margin-top:1rem;color:#ccc;}
+  /* RESPONSIVE */
+  @media (max-width:980px){
+    .grid{grid-template-columns:1fr 1fr}
+    .span2{grid-column:span 2}
+  }
+  @media (max-width:560px){
+    .grid{grid-template-columns:1fr}
+    .span2{grid-column:span 1}
+    .pic img{max-height:300px}
+  }
 </style>
 </head>
 <body>
 
-<!-- NAVBAR -->
-<nav>
-  <h1>Handy Man Pavlik</h1>
-  <ul>
-    <li><a href="#services">Services</a></li>
-    <li><a href="#specials">Specials</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-</nav>
+<!-- NEW TOP BAR WITH SCHEDULE ONLINE -->
+<div class="topbar">
+  🗓️ <a href="https://calendly.com/kyle-pavlik/30min" target="_blank" rel="noopener">Schedule Online</a>
+</div>
 
-<!-- HERO -->
-<section class="hero">
-  <h2>Home Repairs Made Simple — and Cheap</h2>
-  <p>Serving Yukon • Mustang • SW OKC</p>
-  <a class="btn" href="tel:+13097124829">📞 Call (309) 712-4829</a>
-</section>
-
-<!-- SPECIALS -->
-<section id="specials" style="text-align:center;padding:2rem 1rem;">
-  <h2 style="color:var(--orange);font-size:2rem;">🔥 Dryer Vent Cleaning Special 🔥</h2>
-  <p style="font-size:1.2rem;">50% OFF until Christmas</p>
-</section>
-
-<!-- SERVICES GRID -->
-<section id="services" class="grid">
-  <div class="card">
-    <img src="vent.png" alt="5-year-old home dryer vent lint pile">
-    <h3>Dryer Vent Cleaning</h3>
-    <p><strong>Wall Vent:</strong> $40 (was $80)<br><strong>Roof Vent:</strong> $50 (was $100)</p>
+<header class="hero">
+  <div class="container brand">
+    <h1>Handy Man Pavlik</h1>
+    <div class="tag">Home Repairs Made Simple — and Cheap</div>
+    <div class="sub">Proudly Serving Country &amp; Community</div>
+    <a class="cta" href="tel:+13097124829">📞 TEXT OR CALL (309) 712-4829</a>
+    <a class="schedule" href="https://calendly.com/kyle-pavlik/30min" target="_blank" rel="noopener">SCHEDULE NOW</a>
+    <div class="badge">🇺🇸 Veteran</div>
+    <div class="discount">Military &amp; First Responder – 10% OFF</div>
   </div>
-  <div class="card">
-    <img src="https://tse3.mm.bing.net/th/id/OIP.kqkYsp90AAfpFEJKfTvqFQHaHa?pid=Api" alt="A/C condenser cleaning">
-    <h3>A/C Condenser Cleaning</h3>
-    <p>$50 flat rate — improves efficiency & unit life.</p>
-  </div>
-  <div class="card">
-    <img src="https://picsum.photos/id/1010/600/400" alt="Handyman extras">
-    <h3>Handyman Extras</h3>
-    <p>Light electrical & plumbing, furniture assembly, TV mounting, fence repair, and more.</p>
-  </div>
-</section>
 
-<!-- TESTIMONIALS -->
-<section class="testimonials">
-  <h2>What Customers Say</h2>
-  <p class="quote">“Showed up on time, did an amazing job cleaning our dryer vent. Clothes dry faster and we feel safer!”</p>
-  <p class="quote">“Affordable and honest. Highly recommend Handy Man Pavlik.”</p>
-</section>
+  <!-- HOURS -->
+  <div class="scroll-hint">
+    <strong>Hours:</strong><br>
+    Sun: <em>Closed</em><br>
+    Mon: 3:00 PM – 8:00 PM<br> 
+    Tue: 3:00 PM – 8:00 PM<br>
+    Wed: 3:00 PM – 5:00 PM<br>
+    Thu: 3:00 PM – 8:00 PM<br>
+    Fri: 3:00 PM – 8:00 PM<br>
+    Sat: <em>Closed</em>
+  </div>
+</header>
 
-<!-- CONTACT -->
-<footer id="contact">
-  <h2>Get in Touch</h2>
-  <p>📱 <a href="tel:+13097124829">(309) 712-4829</a><br>
-     📅 <a href="https://calendly.com/kyle-pavlik/30min" target="_blank" rel="noopener">Schedule Online</a></p>
-  <small>Veteran Owned • Serving Yukon • Mustang • SW OKC<br>
-  Not licensed plumbing, electrical, or HVAC work.<br>
-  © 2025 Handy Man Pavlik</small>
+<!-- PROMO -->
+<div style="text-align:center;font-family:Arial,Helvetica,sans-serif;margin:2rem 0;">
+  <div style="
+      display:inline-block;background:#0f5132;
+      color:#fff;padding:1.75rem 2rem;border-radius:20px;
+      max-width:520px;min-width:320px;border:1px solid rgba(255,255,255,.25)">
+    <p style="margin:0 0 .3rem 0;font-weight:700;font-size:1.25rem;">
+      Dryer Vent Cleaning
+    </p>
+    <div style="
+        color:#c81e1e;
+        font-weight:900; line-height:1; letter-spacing:.5px;
+        font-size:clamp(2.2rem, 8vw, 3.6rem); 
+        white-space:nowrap; margin:.1rem 0;">
+      50% OFF
+    </div>
+    <p style="margin:.3rem 0 0;font-size:1rem;opacity:.95;">
+      Now Until Christmas
+    </p>
+  </div>
+</div>
+  
+<main class="container">
+  <section class="grid">
+    <!-- Dryer Vent -->
+    <article class="card">
+      <div class="pic">
+        <img src="https://tse4.mm.bing.net/th/id/OIP.F5lmpyC5Ruyp9Tkxk-Uc4AHaEw?pid=Api" alt="Dryer vent before & after" loading="lazy">
+      </div>
+
+      <!-- Your vent.png with caption -->
+      <div style="max-width:400px; margin:auto; text-align:center;">
+        <img src="vent.png" alt="Lint from 5 year old home dryer vent" style="width:100%; height:auto; border:1px solid #ccc; border-radius:8px;" loading="lazy">
+        <p style="font-style:italic; margin-top:8px;">
+          5-year-old home — this much lint was already trapped in the vent!
+        </p>
+      </div>
+
+      <h2>Dryer Vent Cleaning</h2>
+      <p><strong>WALL VENT</strong> <s>$80</s> $40<br>
+         <strong>ROOF VENT</strong> <s>$100</s> $50<br>
+         <strong>TRANSITION PIECE</strong> – $45
+      </p>
+      <ul class="bullets">
+        <li>More airflow</li>
+        <li>Less dry time</li>
+        <li>Lower energy bill</li>
+        <li>Reduces lint fire risk</li>
+      </ul>
+      <div class="note">“One call fixes it all.”</div>
+    </article>
+
+    <!-- A/C Condenser Cleaning -->
+    <article class="card">
+      <div class="pic">
+        <img src="https://tse3.mm.bing.net/th/id/OIP.kqkYsp90AAfpFEJKfTvqFQHaHa?pid=Api" alt="A/C condenser coil cleaning" loading="lazy">
+      </div>
+      <h2>A/C Condenser Cleaning</h2>
+      <p><strong>Price:</strong> $50</p>
+      <ul class="bullets">
+        <li>Improves cooling efficiency &amp; extends unit life</li>
+        <li>Gentle coil rinse + debris removal</li>
+        <li>Includes unit perimeter cleanup</li>
+      </ul>
+      <div class="note">“Fixing Stuff, One Smile at a Time.”</div>
+    </article>
+
+    <!-- Extras -->
+    <article class="card span2">
+      <h2>Electrical, Plumbing, Pressure Washing &amp; More</h2>
+      <div style="display:flex;flex-wrap:wrap;gap:8px">
+        <span class="pill">Light fixtures &amp; switches</span>
+        <span class="pill">Faucets &amp; toilets</span>
+        <span class="pill">Dishwasher/washer hookups</span>
+        <span class="pill">Driveways, siding, decks</span>
+        <span class="pill">TV mounting</span>
+        <span class="pill">Furniture assembly</span>
+        <span class="pill">Fence &amp; gate repair</span>
+      </div>
+      <div class="note" style="margin-top:10px">“Repairs Without the Hassle.”</div>
+    </article>
+  </section>
+
+  <!-- INLINE CALENDAR (kept) -->
+  <section class="info" id="calendar">
+    <div class="areas">Schedule Online</div>
+    <div class="calendly-inline-widget" data-url="https://calendly.com/kyle-pavlik/30min" style="min-width:280px;height:680px;width:100%;max-width:1000px;border:1px solid var(--line);border-radius:14px;background:#fff;"></div>
+  </section>
+
+  <section class="info">
+    <div class="areas">Serving <strong>Yukon • Mustang • SW OKC</strong></div>
+    <a class="schedule" href="https://calendly.com/kyle-pavlik/30min" target="_blank" rel="noopener">Schedule Now</a>
+    <a class="cta" href="tel:+13097124829">📞 Text or Call (309) 712-4829</a>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <small>Please note: I provide handyman services only, not licensed plumbing, electrical, or HVAC work.</small>
+    <div>© 2025 Handy Man Pavlik</div>
+  </div>
 </footer>
 
+<!-- Calendly embed script -->
+<script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
 </body>
 </html>
