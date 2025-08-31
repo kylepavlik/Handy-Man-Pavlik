@@ -7,7 +7,7 @@
 <meta name="description" content="Dryer vent cleaning, A/C condenser cleaning, light electrical & plumbing, pressure washing. Text or Call (309) 712-4829. Serving Yukon • Mustang • SW OKC.">
 <style>
   :root{
-    --navy:#0d1b2a; /* Darker blue for overalls look */
+    --navy:#0d1b2a;
     --orange:#e8862f;
     --cream:#fdf8f2;
     --lightblue:#e6f0f8;
@@ -29,7 +29,7 @@
   .hero{
     background:var(--white);
     border-bottom:4px solid var(--line);
-    padding:2rem 0;
+    padding:2rem 0 1rem;
     text-align:center;
   }
   .brand h1{
@@ -49,7 +49,7 @@
     font-weight:700;
     margin:6px 0 16px;
   }
-  .cta{
+  .cta, .schedule{
     display:inline-block;
     background:var(--orange);
     color:#fff;
@@ -58,111 +58,58 @@
     border-radius:12px;
     margin:5px;
   }
-  .schedule{
-    display:inline-block;
-    background:var(--orange); /* match brand */
-    color:#fff;
-    font-weight:900;
-    font-size:1.2rem;
-    padding:16px 28px;
-    border-radius:14px;
-    margin:5px;
-  }
+  .schedule{font-size:1.05rem; padding:14px 22px; border-radius:14px;}
   .badge{
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-    background:var(--white);
-    border:2px solid var(--line);
-    border-radius:999px;
-    padding:8px 12px;
-    font-weight:800;
-    margin-top:10px;
+    display:inline-flex; align-items:center; gap:8px;
+    background:var(--white); border:2px solid var(--line);
+    border-radius:999px; padding:8px 12px; font-weight:800; margin-top:10px;
   }
-  .discount{
-    margin-top:8px;
-    font-weight:800;
-    color:var(--navy);
-  }
-  .scroll-hint{
-    text-align:center;
-    color:#5a6a7d;
-    font-weight:700;
-    padding:6px 0 18px;
-  }
+  .discount{ margin-top:8px; font-weight:800; color:var(--navy) }
+  .scroll-hint{ text-align:center; color:#5a6a7d; font-weight:700; padding:8px 0 18px }
 
   /* GRID CARDS */
   .grid{
-    display:grid;
-    gap:18px;
-    grid-template-columns:repeat(3,1fr);
+    display:grid; gap:18px; grid-template-columns:repeat(3,1fr);
     padding:28px 0;
   }
   .card{
-    border:1px solid var(--line);
-    border-radius:18px;
-    padding:16px;
+    border:1px solid var(--line); border-radius:18px; padding:16px;
     box-shadow:0 6px 18px rgba(10,20,30,.08);
-    display:flex;
-    flex-direction:column;
-    color:var(--navy);
-  }
-  .card:nth-child(odd){
+    display:flex; flex-direction:column; color:var(--navy);
     background:var(--white);
   }
-  .card:nth-child(even){
-    background:var(--lighterblue);
+  .card:nth-child(even){ background:var(--lighterblue) }
+  .card h2{ margin:.15rem 0 10px; font-size:22px; color:var(--orange) }
+
+  .pic{ display:grid; gap:10px; margin-bottom:10px }
+  .pic .gallery{
+    display:grid; grid-template-columns:1fr 1fr; gap:10px;
   }
-  .card h2{
-    margin:.15rem 0 10px;
-    font-size:22px;
-    color:var(--orange);
-  }
-  .pic{
+  .pic figure{
+    margin:0; border:1px solid var(--line); border-radius:14px; overflow:hidden;
     background:#eef3f8;
-    border:1px solid var(--line);
-    border-radius:14px;
-    display:grid;
-    place-items:center;
-    height:auto;
-    margin-bottom:10px;
-    overflow:hidden;
   }
-  .pic img{
-    width:100%;
-    height:auto;
-    object-fit:contain;
-  }
+  .pic img{ width:100%; height:auto; display:block; }
+  .pic figcaption{ font-style:italic; font-size:.92rem; text-align:center; padding:6px 8px }
+
   .bullets{margin:6px 0 2px 18px}
   .bullets li{margin:6px 0}
   .note{margin-top:10px;font-weight:800;color:var(--navy)}
   .span2{grid-column:span 3}
   .pill{
-    display:inline-block;
-    background:var(--cream);
-    padding:6px 10px;
-    border-radius:999px;
-    font-weight:800;
-    margin:4px 6px 0 0;
+    display:inline-block; background:var(--cream); padding:6px 10px;
+    border-radius:999px; font-weight:800; margin:4px 6px 0 0;
   }
 
   /* INFO + FOOTER */
-  .info{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    gap:12px;
-    padding:0 0 32px;
-  }
+  .info{ display:flex; flex-direction:column; align-items:center; gap:12px; padding:0 0 32px }
   .areas{font-weight:900;text-align:center;color:var(--navy)}
   footer{background:var(--white);border-top:4px solid var(--line)}
   footer .container{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:12px 0;
-    color:var(--navy);
+    display:flex; justify-content:space-between; align-items:center;
+    gap:10px; padding:12px 0; color:var(--navy); flex-wrap:wrap;
   }
+  footer small{ color:#666 }
 
   /* RESPONSIVE */
   @media (max-width:980px){
@@ -172,7 +119,7 @@
   @media (max-width:560px){
     .grid{grid-template-columns:1fr}
     .span2{grid-column:span 1}
-    .pic img{max-height:300px}
+    .pic .gallery{ grid-template-columns:1fr } /* stack the two images on phones */
   }
 </style>
 </head>
@@ -184,61 +131,51 @@
     <div class="tag">Home Repairs Made Simple — and Cheap</div>
     <div class="sub">Proudly Serving Country &amp; Community</div>
     <a class="cta" href="tel:+13097124829">TEXT OR CALL (309) 712-4829</a>
-    <a class="schedule" href="https://calendly.com/kyle-pavlik/30min" target="_blank">SCHEDULE NOW</a><div>
+    <a class="schedule" href="https://calendly.com/kyle-pavlik/30min" target="_blank" rel="noopener">SCHEDULE NOW</a>
     <div class="badge">🇺🇸 Veteran</div>
-    <div class="discount">Military & First Responder – 10% OFF</div>
+    <div class="discount">Military &amp; First Responder – 10% OFF</div>
   </div>
-    
-  <!-- HOURS (replaces the old "Scroll for services" line) -->
+
+  <!-- HOURS -->
   <div class="scroll-hint">
     <strong>Hours:</strong><br>
     Sun: <em>Closed</em><br>
-    Mon: 3:00 PM – 8:00 PM<br> 
+    Mon: 3:00 PM – 8:00 PM<br>
     Tue: 3:00 PM – 8:00 PM<br>
     Wed: 3:00 PM – 5:00 PM<br>
     Thu: 3:00 PM – 8:00 PM<br>
     Fri: 3:00 PM – 8:00 PM<br>
-    Sat: Closed
+    Sat: <em>Closed</em>
   </div>
 </header>
 
-   <div style="text-align:center;font-family:Arial,Helvetica,sans-serif;margin:2rem 0;">
-  <div style="
-      display:inline-block;background:#0f5132; /* deep evergreen to avoid clash */
-      color:#fff;padding:1.75rem 2rem;border-radius:20px;
-      max-width:520px;min-width:320px;border:1px solid rgba(255,255,255,.25)">
-    <p style="margin:0 0 .3rem 0;font-weight:700;font-size:1.25rem;">
-      Dryer Vent Cleaning
-    </p>
-
-    <!-- Single-line, auto-scaling red headline -->
-    <div style="
-        color:#c81e1e; /* brick red */
-        font-weight:900; line-height:1; letter-spacing:.5px;
-        font-size:clamp(2.2rem, 8vw, 3.6rem); 
-        white-space:nowrap; margin:.1rem 0;">
-      50% OFF
-    </div>
-
-    <p style="margin:.3rem 0 0;font-size:1rem;opacity:.95;">
-      Now Until Christmas
-    </p>
+<!-- Promo pill -->
+<div style="text-align:center;margin:2rem 0;">
+  <div style="display:inline-block;background:#0f5132;color:#fff;padding:1.75rem 2rem;border-radius:20px;max-width:520px;min-width:320px;border:1px solid rgba(255,255,255,.25)">
+    <p style="margin:0 0 .3rem 0;font-weight:700;font-size:1.25rem;">Dryer Vent Cleaning</p>
+    <div style="color:#c81e1e;font-weight:900;line-height:1;letter-spacing:.5px;font-size:clamp(2.2rem, 8vw, 3.6rem);white-space:nowrap;margin:.1rem 0;">50% OFF</div>
+    <p style="margin:.3rem 0 0;font-size:1rem;opacity:.95;">Now Until Christmas</p>
   </div>
 </div>
-  
+
 <main class="container">
   <section class="grid">
     <!-- Dryer Vent -->
     <article class="card">
       <div class="pic">
-        <img src="https://tse4.mm.bing.net/th/id/OIP.F5lmpyC5Ruyp9Tkxk-Uc4AHaEw?pid=Api" alt="Dryer vent before & after">
+        <div class="gallery">
+          <!-- Host this image in your repo when you can -->
+          <figure>
+            <img src="https://tse4.mm.bing.net/th/id/OIP.F5lmpyC5Ruyp9Tkxk-Uc4AHaEw?pid=Api" alt="Dryer vent lint build-up example" loading="lazy" />
+            <figcaption>Typical lint build-up</figcaption>
+          </figure>
+
+          <figure>
+            <img src="vent.png" alt="5-year-old home dryer vent lint pile" loading="lazy" />
+            <figcaption>6-year-old home — this much lint was already trapped</figcaption>
+          </figure>
+        </div>
       </div>
-      <div style="max-width:400px; margin:auto; text-align:center;">
-  <img src="vent.png" alt="Lint from 5 year old home dryer vent" style="width:100%; height:auto; border:1px solid #ccc; border-radius:8px;">
-  <p style="font-style:italic; margin-top:8px;">
-    5-year-old home!
-  </p>
-</div>
 
       <h2>Dryer Vent Cleaning</h2>
       <p><strong>WALL VENT</strong> <s>$80</s> $40<br>
@@ -257,7 +194,9 @@
     <!-- A/C Condenser Cleaning -->
     <article class="card">
       <div class="pic">
-        <img src="https://tse3.mm.bing.net/th/id/OIP.kqkYsp90AAfpFEJKfTvqFQHaHa?pid=Api" alt="A/C condenser coil cleaning">
+        <figure>
+          <img src="https://tse3.mm.bing.net/th/id/OIP.kqkYsp90AAfpFEJKfTvqFQHaHa?pid=Api" alt="A/C condenser coil cleaning" loading="lazy" />
+        </figure>
       </div>
       <h2>A/C Condenser Cleaning</h2>
       <p><strong>Price:</strong> $50</p>
@@ -287,17 +226,16 @@
 
   <section class="info">
     <div class="areas">Serving <strong>Yukon • Mustang • SW OKC</strong></div>
-    <a class="schedule" href="https://calendly.com/kyle-pavlik/30min" target="_blank">Schedule Now</a>
+    <a class="schedule" href="https://calendly.com/kyle-pavlik/30min" target="_blank" rel="noopener">Schedule Now</a>
     <a class="cta" href="tel:+13097124829">Text or Call (309) 712-4829</a>
   </section>
 </main>
 
 <footer>
   <div class="container">
-      <p style="font-size: 12px; color: #666; text-align: center; margin-top: 20px;">
-    Please note: I provide handyman services only, not licensed plumbing, electrical, or HVAC work.<div>
+    <small>Please note: I provide handyman services only, not licensed plumbing, electrical, or HVAC work.</small>
     <div>© 2025 Handy Man Pavlik</div>
-</div>
+  </div>
 </footer>
 
 </body>
